@@ -3,7 +3,7 @@
  www.SamuelJohn.de
  License: CreativeCommons: BY-SA 3.0 unported. www.creativecommons.org
  2012
- version: 0.1
+ version: 0.2
 
  Based on several sources:
  * Byword's css.
@@ -23,8 +23,12 @@
     margin: 0;
     padding: 0;
 }
-#wrapper>*:first-child{ margin-top: 0!important }
-#wrapper>*:last-child{ margin-bottom: 0!important }
+#wrapper>*:first-child { 
+    margin-top: 0!important 
+}
+#wrapper>*:last-child { 
+    margin-bottom: 0!important 
+}
 #content {
     margin: 0 auto 0 auto;
     padding: 4em 4em 4em 4em;
@@ -43,7 +47,11 @@ body
 body,p,td,div
 {
     word-wrap:break-word;
-    margin: 0 0 0 0;
+    margin: 0;
+}
+
+p {
+    margin: 0 0 .5em 0;
 }
 
 p:last-child {
@@ -62,7 +70,7 @@ a:hover
 }
 
 
-/* headings */
+/**** headings *****************************************************************/
 h1,h2,h3,h4,h5,h6 {
     line-height: 1.1em;
     margin: 0;
@@ -129,8 +137,8 @@ h6 {
 
 h4+p,h5+p,h6+p{margin-top:0}
 
-
-code,tt{
+/**** blocks *****************************************************************/
+code,tt {
     margin: 0 0.15em;
     padding: 0.2em .3em;
     white-space: nowrap;
@@ -142,7 +150,7 @@ code,tt{
     font-size: .9em;
 }
 
-pre>code{
+pre>code {
     margin: 0;
     padding: 0;
     white-space:pre;
@@ -165,39 +173,68 @@ pre>code{
 
 #wrapper>pre,#wrapper>div.highlight{margin:1em 0 0;}
 
-blockquote{
+blockquote {
     margin:1em 0;
     border-left:.3em solid #ddd;
     padding-left:11px;
     color:#555;
 }
 
-/* lists */
-li p.first{display:inline-block}
-ul,ol{margin:0; padding: 0em 0 0 1.6em;}
-ul li,ol li{margin-top:.3em;margin-bottom:.6em}
-ul li>*:last-child,ol li>*:last-child{margin-bottom:0}
-ul li>*:first-child,ol li>*:first-child{margin-top:0}
-dl{margin:0;padding:0.1em 0 0}
-dl dt{font-size:1em;font-weight:bold;line-height:normal;margin:0;padding:.5em 0 0}
-dl dt:first-child{padding:0 0 0 0}
-dl dd{font-size:1em;margin:0;padding:.1em 0 0 3em}
+/**** lists ******************************************************************/
+li p.first {
+    display: inline-block; 
+    margin: 0;
+}
+ul,ol {
+    margin: 0; 
+    padding: 0em 0 0 1.6em;
+}
+ul li,ol li {
+    padding: 0;
+    margin-top:.1em;
+    margin-bottom:.3em;
+}
+ul li>*:last-child,ol li>*:last-child {
+    margin-bottom:0;
+}
+ul li>*:first-child,ol li>*:first-child {
+    margin-top:0;
+}
+dl {
+    margin:0; 
+    padding:0.1em 0 0 0;
+}
+dl dt{
+    font-size: 1em;
+    font-weight: bold;
+    line-height: normal;
+    margin: 0;
+    padding: .5em 0 0 0;
+}
+dl dt:first-child {
+    padding:0 0 0 0;
+}
+dl dd {
+    font-size: 1em;
+    margin: 0;
+    padding:.1em 0 0 3em;
+}
 /* end of lists */
 
 hr {
     width: 100%;
-    margin:auto;
+    margin: auto;
     margin-top: .5em;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     border: 0;
     color: #eee;
     background-color: #ccc;
     height: 1px;
-    -webkit-box-shadow:0px 1px 0px rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.75);
 }
 
 
-/* tables */
+/**** tables *****************************************************************/
 table {
     border-collapse:collapse;
     padding:0;
@@ -236,6 +273,7 @@ table tr th,table tr td {
 }
 
 
+/**** figures, captions and images *******************************************/
 caption {
     font-size: 1.2em;
     font-weight: bold;
@@ -243,28 +281,34 @@ caption {
 }
 
 img {
+    margin: 0;
+    padding: 0;
     vertical-align: baseline;
     border: none;
-    margin: 1em;
     max-width: 100%;
 }
+
+figure img {
+    margin-bottom: 0.5em;
+}
+
 figure {
     text-align: center;
     display: block;
-    margin-bottom: 1em;
+    margin: 1em;
     position: relative;
 }
 
-figcaption{
+figcaption {
     font-size: 0.9em;
-    font-style:italic;
-    text-align:center;
-    color:#444;
-    position:absolute;
-    left:0;
-    bottom:-1em;
-    width:98%;
-    padding:1%;
+    font-style: italic;
+    text-align: center;
+    color: #444;
+    position: absolute;
+    left: 0;
+    bottom: -1em;
+    width: 98%;
+    padding: 1%;
     -webkit-transition:all .2s ease-in-out;
 }
 
@@ -273,11 +317,7 @@ mark {
     padding: .2em .6em;
 }
 
-figure:hover
-{
-    //nothing, yet
-}
-
+/**** @media *****************************************************************/
 @media print {
     body
     {
@@ -324,8 +364,7 @@ figure:hover
     }
 }
 
-/* classes (some taken from ByWord */
-
+/**** classes (some taken from ByWord ****************************************/
 .markdowncitation {
 }
 
@@ -345,8 +384,7 @@ figure:hover
     font-weight: normal;
 }
 
-/* custom formatting classes */
-
+/**** custom formatting classes **********************************************/
 .shadow {
     -webkit-box-shadow: 0 2px 4px #999;
 }
@@ -354,13 +392,15 @@ figure:hover
 .left {
     display: inline;
     float: left;
-    margin-left:0;
+    margin: 1em;
+    margin-left: 0;
 }
 
 .right {
     display: inline;
     float: right;
-    margin-right:0;
+    margin: 1em;
+    margin-right: 0;
 }
 
 .center {
@@ -372,6 +412,7 @@ span.amp{
     font-style: italic;
 }
 
+/**** syntax highlight and selection *****************************************/
 ::selection{background:rgba(157,193,200,.5)}
 h1::selection{background-color:rgba(45,156,208,.3)}
 h2::selection{background-color:rgba(90,182,224,.3)}
@@ -446,6 +487,7 @@ td::selection,th::selection,caption::selection{background-color:rgba(180,237,95,
 .highlight .il{color:#099}
 .highlight .gc{color:#999;background-color:#eaf2f5}
 
+/**** embedded fonts *********************************************************/
 @font-face{ 
     /* http://www.theleagueofmoveabletype.com/league-gothic */
     font-family: 'LeagueGothic';
