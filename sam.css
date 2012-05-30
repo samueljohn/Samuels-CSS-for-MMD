@@ -186,7 +186,9 @@ dl dd{font-size:1em;margin:0;padding:.1em 0 0 3em}
 
 hr {
     width: 100%;
-    margin: 0.1em auto;
+    margin:auto;
+    margin-top: .5em;
+    margin-bottom: 1em;
     border: 0;
     color: #eee;
     background-color: #ccc;
@@ -241,6 +243,7 @@ caption {
 }
 
 img {
+    vertical-align: baseline;
     border: none;
     margin: 1em;
     max-width: 100%;
@@ -358,6 +361,10 @@ figure:hover
     display: inline;
     float: right;
     margin-right:0;
+}
+
+.center {
+    text-align: center;
 }
 
 span.amp{ 
